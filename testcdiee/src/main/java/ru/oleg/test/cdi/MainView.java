@@ -51,6 +51,7 @@ public class MainView extends VerticalLayout {
         UI ui = attachEvent.getUI();
         broadcasterRegistration = Broadcaster.register(newMessage -> {
             ui.access(() -> this.add(new Span(newMessage)));
+            ui.access(() -> Notification.show(newMessage));
         });
     }
 
